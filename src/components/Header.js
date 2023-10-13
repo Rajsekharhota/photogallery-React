@@ -1,28 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ghostLogo from "../assets/ghost_logo.png";
 
-const Header = () => {
+const Header = ({ setSearchImg }) => {
+  const handleSearch = (event) => {
+    setSearchImg(event.target.value);
+  };
+
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img src={ghostLogo} alt="ghost cms" width="200px" height="90px" />
+    <div className="header-container">
+      <div className="brand-header">
+        <p className="brand-name">pixelpioneers</p>
       </div>
-      <div className="brand-container">
-        <p className="brand">GHOST CMS</p>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/posts">Posts</Link>
-          </li>
-          <li>
-            <Link to="/links">Links</Link>
-          </li>
-        </ul>
+      <div className="input-header">
+        <h3>Stunning royalty-free images & royalty-free stock</h3>
+        <p>
+          Over 4.2 million+ high quality stock images, videos and music shared
+          by our talented community.
+        </p>
+        <div className="input-field">
+          <span className="fa fa-search icon"></span>
+          <input
+            type="text"
+            placeholder="Search for all images on pixelpioneers"
+            onChange={handleSearch}
+            className="text-field"
+          />
+        </div>
       </div>
     </div>
   );

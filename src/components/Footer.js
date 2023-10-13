@@ -1,30 +1,21 @@
 import React from "react";
-import ghostLogo from "../assets/ghost_logo.png";
 
-function Footer() {
+const Footer = () => {
   return (
     <div className="footer-container">
-      <div className="footer-logo">
-        <img src={ghostLogo} alt="ghost cms" width="100px" height="60px" />
-      </div>
-      <div className="footer-items">
-        <ul>
-          <li>About</li>
-          <li>Explore</li>
-          <li>Careers</li>
-          <li>Resources</li>
-        </ul>
-      </div>
-      <div className="other-footer-items">
-        <ul>
-          <li>Terms</li>
-          <li>Privacy</li>
-          <li>Contact</li>
-          <li>Ghost Foundation &copy; 2023</li>
-        </ul>
+      <p className="brand-name-footer">pixelpioneers</p>
+      <p>
+        Over 4.4 million+ high quality stock images, videos and music shared by
+        our talented community.
+      </p>
+      <div className="brand-icons">
+        <span className="fa-brands fa-facebook"></span>
+        <span className="fa-brands fa-twitter"></span>
+        <span className="fa-brands fa-instagram"></span>
+        <span className="fa-brands fa-pinterest"></span>
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

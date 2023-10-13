@@ -1,25 +1,24 @@
-import React from "react";
-import Header from "./components/Header";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import Links from "./components/Links";
-import Posts from "./components/Posts";
-import GhostContext from "./Api/GhostContext";
+import ImageContext from "./Api/ImageContext";
+import Header from "./components/Header";
+import ImageGallery from "./components/ImageGallery";
+import ImageDetail from "./components/ImageDetail";
 import Footer from "./components/Footer";
 
 function App() {
+  const [searchImg, setSearchImg] = useState("");
   return (
-    <GhostContext>
+    <ImageContext>
       <BrowserRouter>
-        <Header />
+        <Header setSearchImg={setSearchImg} />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/links" element={<Links />} />
-          <Route path="/posts" element={<Posts />} />
+          <Route path="/" element={<ImageGallery searchImg={searchImg} />} />
+          <Route path="/image/:imageUrl" element={<ImageDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>
-    </GhostContext>
+    </ImageContext>
   );
 }
 
